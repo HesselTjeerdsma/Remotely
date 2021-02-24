@@ -134,7 +134,9 @@ jobs:
         [IO.File]::WriteAllBytes($certificatePath, $pfx_cert_byte)
     
     # Store the assembly version in an environment variable
-    - name: Set current version
+    - name: Set current version 
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       shell: powershell
       run: |
         $VersionString = git show -s --format=%ci
