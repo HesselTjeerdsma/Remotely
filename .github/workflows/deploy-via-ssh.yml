@@ -97,6 +97,9 @@ jobs:
       SiteUrl: ${{ secrets.SITE_URL }}
 
     steps:
+    - name: Test Enviroment
+      run: echo ${{ secrets.SITE_URL }}
+      
     - name: Checkout
       uses: actions/checkout@v2
       with:
